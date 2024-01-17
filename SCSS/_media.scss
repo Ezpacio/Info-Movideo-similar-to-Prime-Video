@@ -1,0 +1,301 @@
+@media screen and (max-width: $first-size) {
+    header {
+        #header {
+            height: 48px;
+
+            #logo {
+                a{
+                    font-size: 18px;
+                }
+            }
+
+            #navigation {
+                li a {
+                    font-size: 18px;
+                }
+
+            }
+
+            #user{
+                ul{
+                    li#profile {
+                        span.picture {
+                            img {
+                                width: 32px;
+                                height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header{
+        #header {
+            height: 38px;
+            max-width: 800px;
+    
+            #navigation {
+                li.li a {
+                    font-size: 16px;
+                }
+            }
+    
+            #user{
+                ul{
+                    li#profile {
+                        span.picture {
+                            img {
+                                width: 28px;
+                                height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .search-icon {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 860px) {
+    header.sticky {
+        top: 0;
+        background: $main-bg-color;
+    }
+
+    header.sticky #header {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    header{
+        #header {
+            min-width: 100%;
+            height: 48px;
+
+            #navigation {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                justify-content: flex-start;
+                background: $main-color;
+                width: 100%;
+                height: calc(100vh + 48px);
+                overflow-y: scroll;
+                
+                li.active::before{
+                    display: none;
+                }
+                li:last-child{
+                    max-height: 48px;
+                }
+
+                li.kategori {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    position: relative;
+                    padding: 0;
+                    &:hover{
+                        min-height: 100% !important;
+                    }
+
+                    .kategori-btn{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 48px;
+                        padding-left: 15px;
+                    }
+
+                    .kategori-popup {
+                        position: relative;
+                        flex-direction: column;
+                        transform: translateX(0);
+                        top: 0;
+                        .kategori-inner {
+                            min-width: 100%;
+                            padding: 0;
+
+                            ul {
+                                column-count: 1;
+                                background: #33373d;
+
+                                li {
+                                    padding: 12px;
+                                    border-radius: 0;
+        
+                                    &:hover{
+                                        background: $main-bg-color;
+                                        a{
+                                            color: $text-Color;
+                                        }
+                                    }
+        
+                                    a {
+                                        color: $default-color;
+                                        font-size: 18px;
+                                        font-weight: 500;
+                                        line-height: 25px;
+                                        align-items: center;
+                                    }
+                                }
+                            }
+                        }
+        
+                    }
+                    
+                }
+
+                li.li {
+                    height: fit-content;
+                    min-height: 48px;
+                    width: 100%;
+                    justify-content: flex-start;
+                    a {
+                        margin-left: 10px;
+                        font-size: 16px;
+                    }
+                    
+                    i.i-bfr {
+                        display: block;
+                        font-size: 18px;
+                    }
+    
+                }
+
+            }
+
+            #user{
+                ul{
+                    li#profile {
+                        span.name {
+                            display: none;
+                        }
+                    }
+                    li.search{
+                        .search-input{
+                            visibility: hidden;
+                            opacity: 0;
+                            position: absolute;
+                            z-index: 1000;
+                            height: 100vh;
+        
+                            form{
+                                input[type="text"]{
+                                    height: 48px;
+                                }
+                                span.temizle{
+
+                                    input{
+                                        background: transparent;
+                                        padding: 4px 14px;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    li.search.active{
+                        background: $main-color;
+                    }
+
+                    li#profile {
+                        position: inherit;
+                        span {
+                            img {
+                                width: 28px;
+                                height: 28px;
+                            }
+                        }
+
+                        &.active .profile-popup{
+                            display: block;
+                        }
+
+                        .profile-popup{
+                            display: none;
+                            min-width: 100%;
+                            height: 100vh;
+                            right: 0;
+                            
+                            .profile-inner-right{
+                                padding-left: 0;
+                            }
+                            ul{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                height: fit-content;
+                                width: 100%;
+    
+                                li{
+                                    padding: 12px;
+                                    border-radius: 8px;
+                                    width: 100%;
+                                    height: max-content;
+                                    gap: 10px;
+                                    cursor: pointer;
+                                    span{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                    a{
+                                        font-size: 16px;
+                                    }
+                                    &:hover{
+                                        background: $text-Color;
+                                        color: $main-bg-color;
+                                        a{
+                                            color: $main-bg-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #menu.active{
+                background: $main-color;
+                #navigation{
+                    display: flex;
+                    z-index: 1000;
+                }
+                i.menu-icon{
+                    transform: rotate(180deg);
+                }
+            }
+            
+            #menu {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                order: -1;
+                padding: 0 12px;
+                height: 100%;
+                cursor: pointer;
+                i{
+                    transition: $trasition;
+                }
+                i.rotate{
+                    transform: rotate(180deg);
+                }
+                span, i.i-bfr{
+                    display: inherit;
+                }
+            }
+        }
+    }
+}

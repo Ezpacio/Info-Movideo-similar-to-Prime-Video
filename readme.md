@@ -1,0 +1,1 @@
+###  "info movideo" Prime Video-like project where detailed movie and TV series information is displayed using public API
