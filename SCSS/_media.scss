@@ -1,13 +1,16 @@
-@media screen and (max-width: $first-size) {
+
+@media screen and (max-width: $desktop-sizes) {
+
+    .logo {
+        a{
+            font-size: 18px;
+        }
+    }
+
     header {
         #header {
             height: 48px;
 
-            #logo {
-                a{
-                    font-size: 18px;
-                }
-            }
 
             #navigation {
                 li a {
@@ -32,7 +35,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $tablet-sizes) {
     header{
         #header {
             height: 38px;
@@ -64,7 +67,7 @@
     }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: $phone-sizes) {
     header.sticky {
         top: 0;
         background: $main-bg-color;
@@ -193,6 +196,7 @@
                             form{
                                 input[type="text"]{
                                     height: 48px;
+                                    font-size: 16px
                                 }
                                 span.temizle{
 
@@ -204,7 +208,6 @@
                                 }
                             }
                         }
-
                     }
                     li.search.active{
                         background: $main-color;
@@ -296,6 +299,48 @@
                     display: inherit;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: $phon-xsmall){
+
+    .logo {
+        padding:0 8px;
+        a{
+            font-size: 16px;
+        }
+    }
+
+    header{
+        #header {
+
+            #navigation {
+                li.li a {
+                    font-size: 16px;
+                }
+            }
+    
+            #user{
+                ul{
+                    li#profile {
+                        padding: 0 12px;
+                        span.picture {
+                            img {
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+                    li.search{
+                        padding: 0 12px;
+                        .search-icon {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+    
         }
     }
 }

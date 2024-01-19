@@ -1,4 +1,3 @@
-const header = document.querySelector('header');
 const navBtns = document.querySelectorAll('.nav-li');
 const searchBtn = document.querySelector('.search-icon');
 const resetBtn = document.querySelector('input[type="reset"]');
@@ -8,7 +7,8 @@ const profile = document.getElementById('profile');
 
 // add sticky class to navigation
 window.addEventListener('scroll', () => {
-    header.classList.toggle('sticky', window.scrollY > 60);
+    document.querySelector('header').classList.toggle('sticky', window.scrollY > 60);
+    document.querySelector('.flip-top').classList.toggle('active', window.scrollY > 650)
 })
 
 // Add active class navigation buttons
@@ -37,6 +37,46 @@ document.querySelectorAll('.c-list').forEach(item => {
         profile.classList.remove('active');
     })
 })
+
+
+
+
+
+
+/* Slide Options*/
+const swiper = new Swiper('.swiper', {
+    speed: 900,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+    },
+    keyboard:{
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    // effect: 'coverflow',
+    // grabCursor: true,
+    // centeredSlides: true,
+    // loop: true,
+    // coverflowEffect: {
+    // rotate: 0,
+    // stretch: 0,
+    // depth: 100,
+    // modifier: 2.5,
+    // slideShadows: true,
+    // },
+});
+
+
+
+
 
 function init() {
 
