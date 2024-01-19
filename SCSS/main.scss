@@ -112,17 +112,15 @@ header {
             height: 100%;
 
             li.li {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 15px;
                 height: 100%;
-                z-index: 1000;
-
                 .kategori-btn {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    height: 100%;
+                    a{
+                        padding-right: 0;
+                    }
                 }
 
                 &:hover {
@@ -140,6 +138,12 @@ header {
                 }
 
                 a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 15px;
+                    height: 100%;
+                    z-index: 1000;
                     color: $default-color;
                     font-size: 18px;
                     font-weight: 500;
@@ -150,7 +154,7 @@ header {
                 i {
                     font-size: 18px;
                     text-align: center;
-                    margin-left: 6px;
+                    padding: 12px;
                     color: $default-color;
                     transition: $trasition;
                 }
@@ -214,6 +218,7 @@ header {
                                     font-weight: 500;
                                     line-height: 25px;
                                     align-items: center;
+                                    justify-content: flex-start;
                                 }
                             }
                         }
@@ -448,13 +453,22 @@ section#slide {
     height: calc(100vh - 10vh);
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    flex-direction: column;
+
+    &.slide-inner-pages{
+        justify-content: flex-end;
+    }
 
     .swiper {
         position: relative;
         width: 94%;
         height: 70vh;
+
+        // &.swiper-opages{
+        //     height: calc(70vh + 80px);
+        // }
 
         .swiper-wrapper {
 
@@ -479,8 +493,52 @@ section#slide {
     }
 }
 
+.title {
+    &.inner-pages{
+        padding: 24px 0;
+        max-width: 94%;
+        margin: 0 auto;
+        width: 100%;
+        h3{
+            font-size: 34px;
+            letter-spacing: 2px;
+        }
+    }
+    h3 {
+        display: flex;
+        gap: 8px;
+        width: fit-content;
+        &:hover{
+            i{
+                transform: translateX(10px);
+            }
+        }
+        span {
+            color: #7b909d;
+            opacity: 0.7;
+            margin-right: 10px;
+            font-size: 1.17em;
+            font-weight: 600;
+            z-index: -1;
 
-#movies-shows {
+        }
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            color: $text-Color;
+            i{
+                margin-left: 10px;
+                font-size: 24px;
+                transition: $trasition;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+#movies-shows,#movies,#shows {
     width: 100%;
     padding-bottom: 100px;
 
@@ -497,35 +555,8 @@ section#slide {
     .bilim-container{
         max-width: 94%;
         margin: 0 auto;
-
-        .title {
-            h3 {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                width: fit-content;
-                cursor: pointer;
-                &:hover{
-                    i{
-                        transform: translateX(10px);
-                    }
-                }
-                span {
-                    color: #7b909d;
-                    opacity: 0.7;
-                    margin-right: 10px;
-                    font-size: 1.17em;
-                    font-weight: 600;
-                    z-index: -1;
-
-                }
-                i{
-                    margin-left: 10px;
-                    font-size: 24px;
-                    transition: $trasition;
-                    z-index: -1;
-                }
-            }
+        &.movies-page{
+            margin-top: 100px;
         }
 
         .grid-container {
