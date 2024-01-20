@@ -116,8 +116,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        min-height: 48px;
-                        padding-left: 15px;
+                        height: 48px;
                     }
 
                     .kategori-popup {
@@ -160,6 +159,7 @@
                 }
 
                 li.li {
+                    display: flex;
                     height: fit-content;
                     min-height: 48px;
                     width: 100%;

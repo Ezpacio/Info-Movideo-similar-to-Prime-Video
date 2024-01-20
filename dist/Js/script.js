@@ -5,6 +5,20 @@ const tabletMenu = document.getElementById('menu');
 const listToggle = document.querySelector('.kategori');
 const profile = document.getElementById('profile');
 
+// Page Loader
+window.addEventListener('load', function () {
+    const pageLoader = document.querySelector('.page-loader');
+
+    setTimeout(function () {
+        pageLoader.style.transition = 'opacity 1s';
+        pageLoader.style.opacity = '0';
+    }, 500);
+
+    setTimeout(function () {
+        pageLoader.style.display = 'none';
+    }, 1500);
+});
+
 // add sticky class to navigation
 window.addEventListener('scroll', () => {
     document.querySelector('header').classList.toggle('sticky', window.scrollY > 60);

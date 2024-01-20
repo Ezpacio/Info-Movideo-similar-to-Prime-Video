@@ -74,7 +74,36 @@ header.sticky #header {
     opacity: 1;
     transform: scale(1);
 }
-
+.page-loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-loader .bounceball {
+    position: relative;
+    display: inline-block;
+    height: 37px;
+    width: 15px;
+}
+.page-loader .bounceball:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform-origin: 50%;
+    animation: bounceLoader 500ms alternate infinite ease;
+}
 header {
     position: fixed;
     top: 0;
@@ -450,6 +479,7 @@ header {
 }
 
 section#slide {
+    position: relative;
     height: calc(100vh - 10vh);
     width: 100%;
     display: flex;
@@ -466,20 +496,58 @@ section#slide {
         width: 94%;
         height: 70vh;
 
-        // &.swiper-opages{
-        //     height: calc(70vh + 80px);
-        // }
 
         .swiper-wrapper {
+            
+            .grad{
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                background: linear-gradient(90deg,rgba(0,5,13,.8) 19.65%,rgba(0,5,13,0) 49.93%);
+                z-index: 1000;
+                border-radius: 12px;
+            }
 
             .swiper-slide {
+                position: relative;
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: center;
+                    object-position: top;
                     border-radius: 12px;
                     transition: all ease .44s;
+                }
+                .slide-info{
+                    z-index: 1001;
+                    position: absolute;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    left: 50px;
+
+                    h1{
+                        font-size: 45px;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                    }
+
+                    p{
+                        max-width: 500px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        opacity: 0.7;
+                        margin-bottom: 10px;
+                    }
+                    h3.avarage{
+                        font-size: 20px;
+
+                        span{
+                            font-size: 30px;
+                            color: #4298ff;
+                        }
+                    }
                 }
 
             }
@@ -542,16 +610,29 @@ section#slide {
     width: 100%;
     padding-bottom: 100px;
 
+    &.inner-pages{
+        margin-top: 100px;
+        .inner-type{
+            .title{
+                margin-bottom: 25px;
+                h3{
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
     .movies-container,
     .shows-container,
     .macera-container,
     .komedi-container,
     .belgesel-container,
     .dram-container,
-    .fantastik-container,
+    .tarihi-container,
     .korku-container,
     .gizem-container,
-    .romantik-container,
+    .animasyon-container,
     .bilim-container{
         max-width: 94%;
         margin: 0 auto;
@@ -561,8 +642,8 @@ section#slide {
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(234px, 1fr));
-            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+            gap: 20px;
 
             padding-top: 20px;
 
@@ -572,7 +653,7 @@ section#slide {
                 align-items: center;
                 justify-content: flex-start;
                 max-height: 560px;
-                max-width: 280px;
+                max-width: 266.66px;
                 transition: $trasition;
                 cursor: pointer;
 
@@ -612,7 +693,7 @@ section#slide {
                 .card-body {
                     position: absolute;
                     display: none;
-                    bottom: -136px;
+                    top: 400px;
                     width: 100%;
                     background: $black;
                     padding: 16px;
@@ -621,7 +702,10 @@ section#slide {
                     transition: $trasition;
 
                     h3 {
-                        font-size: 20px;
+                        font-size: 20px; 
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
                     }
 
                     .details {
@@ -635,11 +719,17 @@ section#slide {
                         opacity: 0.7;
                     }
 
-                    p {
+                    h3.avarage {
                         margin-top: 8px;
                         opacity: 0.7;
-                        font-size: 18px;
+                        font-size: 12px;
                         font-weight: 500;
+                        overflow: hidden;
+
+                        span{
+                            font-size: 18px;
+                            color: #4298ff; 
+                        }
                     }
                 }
             }
@@ -651,10 +741,10 @@ section#slide {
     .komedi-container,
     .belgesel-container,
     .dram-container,
-    .fantastik-container,
+    .tarihi-container,
     .korku-container,
     .gizem-container,
-    .romantik-container,
+    .animasyon-container,
     .bilim-container{
         margin-top: 40px
     }
@@ -692,3 +782,21 @@ footer{
 
 
 @import 'media';
+
+/* Animation */
+@keyframes bounceLoader {
+    0% {
+        top: 30px;
+        height: 5px;
+        border-radius: 60px 60px 20px 20px;
+        transform: scaleX(2);
+    }
+    35% {
+        height: 15px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 0;
+    }
+}
