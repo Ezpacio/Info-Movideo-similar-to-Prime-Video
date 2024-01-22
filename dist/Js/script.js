@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
     setTimeout(function () {
         pageLoader.style.display = 'none';
-    }, 1500);
+    }, 1000);
 });
 
 // add sticky class to navigation
@@ -63,11 +63,11 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 30,
     slidesPerView: 1,
     pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
     },
-    keyboard:{
+    keyboard: {
         enabled: true,
         onlyInViewport: true,
         pageUpDown: true
@@ -75,29 +75,41 @@ const swiper = new Swiper('.swiper', {
     autoplay: {
         delay: 5000,
     },
-    // effect: 'coverflow',
-    // grabCursor: true,
-    // centeredSlides: true,
-    // loop: true,
-    // coverflowEffect: {
-    // rotate: 0,
-    // stretch: 0,
-    // depth: 100,
-    // modifier: 2.5,
-    // slideShadows: true,
-    // },
+});
+const swiper2 = new Swiper('.swiper2', {
+    speed: 900,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 4,
+    slidesPerView: 1,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true
+    },
+    slidesPerView: 1,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      }
+    }
 });
 
 
 
 
-
 function initAll() {
-
-    searchBtn.addEventListener('click', () => {
-        // searchBtn.firstElementChild.classList.toggle('iconoir-xmark');
-        // searchBtn.parentElement.classList.remove('active');
-    });
     resetBtn.addEventListener('click', () => {
         resetBtn.parentElement.previousElementSibling.value = '';
     });
@@ -112,14 +124,14 @@ function initAll() {
     listToggle.addEventListener('click', () => {
         searchBtn.classList.toggle('active');
     });
-    document.querySelector('#navigation').addEventListener('click', function(event) {
-        event.stopPropagation(); 
+    document.querySelector('#navigation').addEventListener('click', function (event) {
+        event.stopPropagation();
     });
     profile.addEventListener('click', () => {
         profile.classList.toggle('active');
     })
-    document.querySelector('.profile-popup').addEventListener('click', function(event) {
-        event.stopPropagation(); 
+    document.querySelector('.profile-popup').addEventListener('click', function (event) {
+        event.stopPropagation();
     });
 
     navigationButn();

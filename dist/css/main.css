@@ -17,8 +17,8 @@
 body {
   background: #191e25;
   color: #fff;
-  height: 1400px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  height: 100%; }
 
 header.sticky {
   top: 14px;
@@ -98,7 +98,7 @@ header {
   width: 100%;
   background-color: #01050d;
   transition: all ease 0.34s;
-  z-index: 1000; }
+  z-index: 1010; }
   header #header {
     position: relative;
     width: 100%;
@@ -371,36 +371,37 @@ section#slide {
       background: linear-gradient(90deg, rgba(0, 5, 13, 0.8) 19.65%, rgba(0, 5, 13, 0) 49.93%);
       z-index: 1000;
       border-radius: 12px; }
-    section#slide .swiper .swiper-wrapper .swiper-slide {
-      position: relative; }
-      section#slide .swiper .swiper-wrapper .swiper-slide img {
+    section#slide .swiper .swiper-wrapper .swiper-slide a {
+      position: relative;
+      z-index: 1000; }
+      section#slide .swiper .swiper-wrapper .swiper-slide a img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top;
         border-radius: 12px;
         transition: all ease .44s; }
-      section#slide .swiper .swiper-wrapper .swiper-slide .slide-info {
-        z-index: 1001;
-        position: absolute;
-        bottom: 50%;
-        transform: translateY(50%);
-        left: 50px; }
-        section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h1 {
-          font-size: 45px;
-          font-weight: 700;
-          margin-bottom: 20px; }
-        section#slide .swiper .swiper-wrapper .swiper-slide .slide-info p {
-          max-width: 500px;
-          line-height: 24px;
-          font-weight: 500;
-          opacity: 0.7;
-          margin-bottom: 10px; }
-        section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h3.avarage {
-          font-size: 20px; }
-          section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h3.avarage span {
-            font-size: 30px;
-            color: #4298ff; }
+    section#slide .swiper .swiper-wrapper .swiper-slide .slide-info {
+      z-index: 1001;
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      left: 50px; }
+      section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h1 {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 20px; }
+      section#slide .swiper .swiper-wrapper .swiper-slide .slide-info p {
+        max-width: 500px;
+        line-height: 24px;
+        font-weight: 500;
+        opacity: 0.7;
+        margin-bottom: 10px; }
+      section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h3.avarage {
+        font-size: 20px; }
+        section#slide .swiper .swiper-wrapper .swiper-slide .slide-info h3.avarage span {
+          font-size: 30px;
+          color: #4298ff; }
     section#slide .swiper .swiper-pagination-bullet {
       background: #fff;
       margin: 6px !important; }
@@ -439,14 +440,22 @@ section#slide {
       transition: all ease 0.34s;
       z-index: -1; }
 
-#movies-shows, #movies, #shows {
+#movies-shows,
+#movies,
+#shows {
   width: 100%;
   padding-bottom: 100px; }
-  #movies-shows.inner-pages, #movies.inner-pages, #shows.inner-pages {
+  #movies-shows.inner-pages,
+  #movies.inner-pages,
+  #shows.inner-pages {
     margin-top: 100px; }
-    #movies-shows.inner-pages .inner-type .title, #movies.inner-pages .inner-type .title, #shows.inner-pages .inner-type .title {
+    #movies-shows.inner-pages .inner-type .title,
+    #movies.inner-pages .inner-type .title,
+    #shows.inner-pages .inner-type .title {
       margin-bottom: 25px; }
-      #movies-shows.inner-pages .inner-type .title h3, #movies.inner-pages .inner-type .title h3, #shows.inner-pages .inner-type .title h3 {
+      #movies-shows.inner-pages .inner-type .title h3,
+      #movies.inner-pages .inner-type .title h3,
+      #shows.inner-pages .inner-type .title h3 {
         font-size: 35px;
         font-weight: 600; }
   #movies-shows .movies-container,
@@ -459,7 +468,8 @@ section#slide {
   #movies-shows .korku-container,
   #movies-shows .gizem-container,
   #movies-shows .animasyon-container,
-  #movies-shows .bilim-container, #movies .movies-container,
+  #movies-shows .bilim-container,
+  #movies .movies-container,
   #movies .shows-container,
   #movies .macera-container,
   #movies .komedi-container,
@@ -469,7 +479,8 @@ section#slide {
   #movies .korku-container,
   #movies .gizem-container,
   #movies .animasyon-container,
-  #movies .bilim-container, #shows .movies-container,
+  #movies .bilim-container,
+  #shows .movies-container,
   #shows .shows-container,
   #shows .macera-container,
   #shows .komedi-container,
@@ -492,7 +503,8 @@ section#slide {
     #movies-shows .korku-container.movies-page,
     #movies-shows .gizem-container.movies-page,
     #movies-shows .animasyon-container.movies-page,
-    #movies-shows .bilim-container.movies-page, #movies .movies-container.movies-page,
+    #movies-shows .bilim-container.movies-page,
+    #movies .movies-container.movies-page,
     #movies .shows-container.movies-page,
     #movies .macera-container.movies-page,
     #movies .komedi-container.movies-page,
@@ -502,7 +514,8 @@ section#slide {
     #movies .korku-container.movies-page,
     #movies .gizem-container.movies-page,
     #movies .animasyon-container.movies-page,
-    #movies .bilim-container.movies-page, #shows .movies-container.movies-page,
+    #movies .bilim-container.movies-page,
+    #shows .movies-container.movies-page,
     #shows .shows-container.movies-page,
     #shows .macera-container.movies-page,
     #shows .komedi-container.movies-page,
@@ -524,7 +537,8 @@ section#slide {
     #movies-shows .korku-container .grid-container,
     #movies-shows .gizem-container .grid-container,
     #movies-shows .animasyon-container .grid-container,
-    #movies-shows .bilim-container .grid-container, #movies .movies-container .grid-container,
+    #movies-shows .bilim-container .grid-container,
+    #movies .movies-container .grid-container,
     #movies .shows-container .grid-container,
     #movies .macera-container .grid-container,
     #movies .komedi-container .grid-container,
@@ -534,7 +548,8 @@ section#slide {
     #movies .korku-container .grid-container,
     #movies .gizem-container .grid-container,
     #movies .animasyon-container .grid-container,
-    #movies .bilim-container .grid-container, #shows .movies-container .grid-container,
+    #movies .bilim-container .grid-container,
+    #shows .movies-container .grid-container,
     #shows .shows-container .grid-container,
     #shows .macera-container .grid-container,
     #shows .komedi-container .grid-container,
@@ -546,399 +561,9 @@ section#slide {
     #shows .animasyon-container .grid-container,
     #shows .bilim-container .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
       padding-top: 20px; }
-      #movies-shows .movies-container .grid-container .card,
-      #movies-shows .shows-container .grid-container .card,
-      #movies-shows .macera-container .grid-container .card,
-      #movies-shows .komedi-container .grid-container .card,
-      #movies-shows .belgesel-container .grid-container .card,
-      #movies-shows .dram-container .grid-container .card,
-      #movies-shows .tarihi-container .grid-container .card,
-      #movies-shows .korku-container .grid-container .card,
-      #movies-shows .gizem-container .grid-container .card,
-      #movies-shows .animasyon-container .grid-container .card,
-      #movies-shows .bilim-container .grid-container .card, #movies .movies-container .grid-container .card,
-      #movies .shows-container .grid-container .card,
-      #movies .macera-container .grid-container .card,
-      #movies .komedi-container .grid-container .card,
-      #movies .belgesel-container .grid-container .card,
-      #movies .dram-container .grid-container .card,
-      #movies .tarihi-container .grid-container .card,
-      #movies .korku-container .grid-container .card,
-      #movies .gizem-container .grid-container .card,
-      #movies .animasyon-container .grid-container .card,
-      #movies .bilim-container .grid-container .card, #shows .movies-container .grid-container .card,
-      #shows .shows-container .grid-container .card,
-      #shows .macera-container .grid-container .card,
-      #shows .komedi-container .grid-container .card,
-      #shows .belgesel-container .grid-container .card,
-      #shows .dram-container .grid-container .card,
-      #shows .tarihi-container .grid-container .card,
-      #shows .korku-container .grid-container .card,
-      #shows .gizem-container .grid-container .card,
-      #shows .animasyon-container .grid-container .card,
-      #shows .bilim-container .grid-container .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        max-height: 560px;
-        max-width: 266.66px;
-        transition: all ease 0.34s;
-        cursor: pointer; }
-        #movies-shows .movies-container .grid-container .card:hover,
-        #movies-shows .shows-container .grid-container .card:hover,
-        #movies-shows .macera-container .grid-container .card:hover,
-        #movies-shows .komedi-container .grid-container .card:hover,
-        #movies-shows .belgesel-container .grid-container .card:hover,
-        #movies-shows .dram-container .grid-container .card:hover,
-        #movies-shows .tarihi-container .grid-container .card:hover,
-        #movies-shows .korku-container .grid-container .card:hover,
-        #movies-shows .gizem-container .grid-container .card:hover,
-        #movies-shows .animasyon-container .grid-container .card:hover,
-        #movies-shows .bilim-container .grid-container .card:hover, #movies .movies-container .grid-container .card:hover,
-        #movies .shows-container .grid-container .card:hover,
-        #movies .macera-container .grid-container .card:hover,
-        #movies .komedi-container .grid-container .card:hover,
-        #movies .belgesel-container .grid-container .card:hover,
-        #movies .dram-container .grid-container .card:hover,
-        #movies .tarihi-container .grid-container .card:hover,
-        #movies .korku-container .grid-container .card:hover,
-        #movies .gizem-container .grid-container .card:hover,
-        #movies .animasyon-container .grid-container .card:hover,
-        #movies .bilim-container .grid-container .card:hover, #shows .movies-container .grid-container .card:hover,
-        #shows .shows-container .grid-container .card:hover,
-        #shows .macera-container .grid-container .card:hover,
-        #shows .komedi-container .grid-container .card:hover,
-        #shows .belgesel-container .grid-container .card:hover,
-        #shows .dram-container .grid-container .card:hover,
-        #shows .tarihi-container .grid-container .card:hover,
-        #shows .korku-container .grid-container .card:hover,
-        #shows .gizem-container .grid-container .card:hover,
-        #shows .animasyon-container .grid-container .card:hover,
-        #shows .bilim-container .grid-container .card:hover {
-          transform: scale(1.1); }
-          #movies-shows .movies-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .shows-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .macera-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .komedi-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .belgesel-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .dram-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .tarihi-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .korku-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .gizem-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .animasyon-container .grid-container .card:hover a.card-link .card-head img,
-          #movies-shows .bilim-container .grid-container .card:hover a.card-link .card-head img, #movies .movies-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .shows-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .macera-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .komedi-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .belgesel-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .dram-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .tarihi-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .korku-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .gizem-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .animasyon-container .grid-container .card:hover a.card-link .card-head img,
-          #movies .bilim-container .grid-container .card:hover a.card-link .card-head img, #shows .movies-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .shows-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .macera-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .komedi-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .belgesel-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .dram-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .tarihi-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .korku-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .gizem-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .animasyon-container .grid-container .card:hover a.card-link .card-head img,
-          #shows .bilim-container .grid-container .card:hover a.card-link .card-head img {
-            border-radius: 0px;
-            border-radius: 0px;
-            border-top-right-radius: 12px;
-            border-top-left-radius: 12px; }
-          #movies-shows .movies-container .grid-container .card:hover .card-body,
-          #movies-shows .shows-container .grid-container .card:hover .card-body,
-          #movies-shows .macera-container .grid-container .card:hover .card-body,
-          #movies-shows .komedi-container .grid-container .card:hover .card-body,
-          #movies-shows .belgesel-container .grid-container .card:hover .card-body,
-          #movies-shows .dram-container .grid-container .card:hover .card-body,
-          #movies-shows .tarihi-container .grid-container .card:hover .card-body,
-          #movies-shows .korku-container .grid-container .card:hover .card-body,
-          #movies-shows .gizem-container .grid-container .card:hover .card-body,
-          #movies-shows .animasyon-container .grid-container .card:hover .card-body,
-          #movies-shows .bilim-container .grid-container .card:hover .card-body, #movies .movies-container .grid-container .card:hover .card-body,
-          #movies .shows-container .grid-container .card:hover .card-body,
-          #movies .macera-container .grid-container .card:hover .card-body,
-          #movies .komedi-container .grid-container .card:hover .card-body,
-          #movies .belgesel-container .grid-container .card:hover .card-body,
-          #movies .dram-container .grid-container .card:hover .card-body,
-          #movies .tarihi-container .grid-container .card:hover .card-body,
-          #movies .korku-container .grid-container .card:hover .card-body,
-          #movies .gizem-container .grid-container .card:hover .card-body,
-          #movies .animasyon-container .grid-container .card:hover .card-body,
-          #movies .bilim-container .grid-container .card:hover .card-body, #shows .movies-container .grid-container .card:hover .card-body,
-          #shows .shows-container .grid-container .card:hover .card-body,
-          #shows .macera-container .grid-container .card:hover .card-body,
-          #shows .komedi-container .grid-container .card:hover .card-body,
-          #shows .belgesel-container .grid-container .card:hover .card-body,
-          #shows .dram-container .grid-container .card:hover .card-body,
-          #shows .tarihi-container .grid-container .card:hover .card-body,
-          #shows .korku-container .grid-container .card:hover .card-body,
-          #shows .gizem-container .grid-container .card:hover .card-body,
-          #shows .animasyon-container .grid-container .card:hover .card-body,
-          #shows .bilim-container .grid-container .card:hover .card-body {
-            display: block; }
-        #movies-shows .movies-container .grid-container .card a.card-link .card-head,
-        #movies-shows .shows-container .grid-container .card a.card-link .card-head,
-        #movies-shows .macera-container .grid-container .card a.card-link .card-head,
-        #movies-shows .komedi-container .grid-container .card a.card-link .card-head,
-        #movies-shows .belgesel-container .grid-container .card a.card-link .card-head,
-        #movies-shows .dram-container .grid-container .card a.card-link .card-head,
-        #movies-shows .tarihi-container .grid-container .card a.card-link .card-head,
-        #movies-shows .korku-container .grid-container .card a.card-link .card-head,
-        #movies-shows .gizem-container .grid-container .card a.card-link .card-head,
-        #movies-shows .animasyon-container .grid-container .card a.card-link .card-head,
-        #movies-shows .bilim-container .grid-container .card a.card-link .card-head, #movies .movies-container .grid-container .card a.card-link .card-head,
-        #movies .shows-container .grid-container .card a.card-link .card-head,
-        #movies .macera-container .grid-container .card a.card-link .card-head,
-        #movies .komedi-container .grid-container .card a.card-link .card-head,
-        #movies .belgesel-container .grid-container .card a.card-link .card-head,
-        #movies .dram-container .grid-container .card a.card-link .card-head,
-        #movies .tarihi-container .grid-container .card a.card-link .card-head,
-        #movies .korku-container .grid-container .card a.card-link .card-head,
-        #movies .gizem-container .grid-container .card a.card-link .card-head,
-        #movies .animasyon-container .grid-container .card a.card-link .card-head,
-        #movies .bilim-container .grid-container .card a.card-link .card-head, #shows .movies-container .grid-container .card a.card-link .card-head,
-        #shows .shows-container .grid-container .card a.card-link .card-head,
-        #shows .macera-container .grid-container .card a.card-link .card-head,
-        #shows .komedi-container .grid-container .card a.card-link .card-head,
-        #shows .belgesel-container .grid-container .card a.card-link .card-head,
-        #shows .dram-container .grid-container .card a.card-link .card-head,
-        #shows .tarihi-container .grid-container .card a.card-link .card-head,
-        #shows .korku-container .grid-container .card a.card-link .card-head,
-        #shows .gizem-container .grid-container .card a.card-link .card-head,
-        #shows .animasyon-container .grid-container .card a.card-link .card-head,
-        #shows .bilim-container .grid-container .card a.card-link .card-head {
-          height: 400px;
-          width: 100%; }
-          #movies-shows .movies-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .shows-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .macera-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .komedi-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .belgesel-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .dram-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .tarihi-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .korku-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .gizem-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .animasyon-container .grid-container .card a.card-link .card-head img,
-          #movies-shows .bilim-container .grid-container .card a.card-link .card-head img, #movies .movies-container .grid-container .card a.card-link .card-head img,
-          #movies .shows-container .grid-container .card a.card-link .card-head img,
-          #movies .macera-container .grid-container .card a.card-link .card-head img,
-          #movies .komedi-container .grid-container .card a.card-link .card-head img,
-          #movies .belgesel-container .grid-container .card a.card-link .card-head img,
-          #movies .dram-container .grid-container .card a.card-link .card-head img,
-          #movies .tarihi-container .grid-container .card a.card-link .card-head img,
-          #movies .korku-container .grid-container .card a.card-link .card-head img,
-          #movies .gizem-container .grid-container .card a.card-link .card-head img,
-          #movies .animasyon-container .grid-container .card a.card-link .card-head img,
-          #movies .bilim-container .grid-container .card a.card-link .card-head img, #shows .movies-container .grid-container .card a.card-link .card-head img,
-          #shows .shows-container .grid-container .card a.card-link .card-head img,
-          #shows .macera-container .grid-container .card a.card-link .card-head img,
-          #shows .komedi-container .grid-container .card a.card-link .card-head img,
-          #shows .belgesel-container .grid-container .card a.card-link .card-head img,
-          #shows .dram-container .grid-container .card a.card-link .card-head img,
-          #shows .tarihi-container .grid-container .card a.card-link .card-head img,
-          #shows .korku-container .grid-container .card a.card-link .card-head img,
-          #shows .gizem-container .grid-container .card a.card-link .card-head img,
-          #shows .animasyon-container .grid-container .card a.card-link .card-head img,
-          #shows .bilim-container .grid-container .card a.card-link .card-head img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 12px; }
-        #movies-shows .movies-container .grid-container .card .card-body,
-        #movies-shows .shows-container .grid-container .card .card-body,
-        #movies-shows .macera-container .grid-container .card .card-body,
-        #movies-shows .komedi-container .grid-container .card .card-body,
-        #movies-shows .belgesel-container .grid-container .card .card-body,
-        #movies-shows .dram-container .grid-container .card .card-body,
-        #movies-shows .tarihi-container .grid-container .card .card-body,
-        #movies-shows .korku-container .grid-container .card .card-body,
-        #movies-shows .gizem-container .grid-container .card .card-body,
-        #movies-shows .animasyon-container .grid-container .card .card-body,
-        #movies-shows .bilim-container .grid-container .card .card-body, #movies .movies-container .grid-container .card .card-body,
-        #movies .shows-container .grid-container .card .card-body,
-        #movies .macera-container .grid-container .card .card-body,
-        #movies .komedi-container .grid-container .card .card-body,
-        #movies .belgesel-container .grid-container .card .card-body,
-        #movies .dram-container .grid-container .card .card-body,
-        #movies .tarihi-container .grid-container .card .card-body,
-        #movies .korku-container .grid-container .card .card-body,
-        #movies .gizem-container .grid-container .card .card-body,
-        #movies .animasyon-container .grid-container .card .card-body,
-        #movies .bilim-container .grid-container .card .card-body, #shows .movies-container .grid-container .card .card-body,
-        #shows .shows-container .grid-container .card .card-body,
-        #shows .macera-container .grid-container .card .card-body,
-        #shows .komedi-container .grid-container .card .card-body,
-        #shows .belgesel-container .grid-container .card .card-body,
-        #shows .dram-container .grid-container .card .card-body,
-        #shows .tarihi-container .grid-container .card .card-body,
-        #shows .korku-container .grid-container .card .card-body,
-        #shows .gizem-container .grid-container .card .card-body,
-        #shows .animasyon-container .grid-container .card .card-body,
-        #shows .bilim-container .grid-container .card .card-body {
-          position: absolute;
-          display: none;
-          top: 400px;
-          width: 100%;
-          background: #000;
-          padding: 16px;
-          border-bottom-left-radius: 12px;
-          border-bottom-right-radius: 12px;
-          transition: all ease 0.34s; }
-          #movies-shows .movies-container .grid-container .card .card-body h3,
-          #movies-shows .shows-container .grid-container .card .card-body h3,
-          #movies-shows .macera-container .grid-container .card .card-body h3,
-          #movies-shows .komedi-container .grid-container .card .card-body h3,
-          #movies-shows .belgesel-container .grid-container .card .card-body h3,
-          #movies-shows .dram-container .grid-container .card .card-body h3,
-          #movies-shows .tarihi-container .grid-container .card .card-body h3,
-          #movies-shows .korku-container .grid-container .card .card-body h3,
-          #movies-shows .gizem-container .grid-container .card .card-body h3,
-          #movies-shows .animasyon-container .grid-container .card .card-body h3,
-          #movies-shows .bilim-container .grid-container .card .card-body h3, #movies .movies-container .grid-container .card .card-body h3,
-          #movies .shows-container .grid-container .card .card-body h3,
-          #movies .macera-container .grid-container .card .card-body h3,
-          #movies .komedi-container .grid-container .card .card-body h3,
-          #movies .belgesel-container .grid-container .card .card-body h3,
-          #movies .dram-container .grid-container .card .card-body h3,
-          #movies .tarihi-container .grid-container .card .card-body h3,
-          #movies .korku-container .grid-container .card .card-body h3,
-          #movies .gizem-container .grid-container .card .card-body h3,
-          #movies .animasyon-container .grid-container .card .card-body h3,
-          #movies .bilim-container .grid-container .card .card-body h3, #shows .movies-container .grid-container .card .card-body h3,
-          #shows .shows-container .grid-container .card .card-body h3,
-          #shows .macera-container .grid-container .card .card-body h3,
-          #shows .komedi-container .grid-container .card .card-body h3,
-          #shows .belgesel-container .grid-container .card .card-body h3,
-          #shows .dram-container .grid-container .card .card-body h3,
-          #shows .tarihi-container .grid-container .card .card-body h3,
-          #shows .korku-container .grid-container .card .card-body h3,
-          #shows .gizem-container .grid-container .card .card-body h3,
-          #shows .animasyon-container .grid-container .card .card-body h3,
-          #shows .bilim-container .grid-container .card .card-body h3 {
-            font-size: 20px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden; }
-          #movies-shows .movies-container .grid-container .card .card-body .details,
-          #movies-shows .shows-container .grid-container .card .card-body .details,
-          #movies-shows .macera-container .grid-container .card .card-body .details,
-          #movies-shows .komedi-container .grid-container .card .card-body .details,
-          #movies-shows .belgesel-container .grid-container .card .card-body .details,
-          #movies-shows .dram-container .grid-container .card .card-body .details,
-          #movies-shows .tarihi-container .grid-container .card .card-body .details,
-          #movies-shows .korku-container .grid-container .card .card-body .details,
-          #movies-shows .gizem-container .grid-container .card .card-body .details,
-          #movies-shows .animasyon-container .grid-container .card .card-body .details,
-          #movies-shows .bilim-container .grid-container .card .card-body .details, #movies .movies-container .grid-container .card .card-body .details,
-          #movies .shows-container .grid-container .card .card-body .details,
-          #movies .macera-container .grid-container .card .card-body .details,
-          #movies .komedi-container .grid-container .card .card-body .details,
-          #movies .belgesel-container .grid-container .card .card-body .details,
-          #movies .dram-container .grid-container .card .card-body .details,
-          #movies .tarihi-container .grid-container .card .card-body .details,
-          #movies .korku-container .grid-container .card .card-body .details,
-          #movies .gizem-container .grid-container .card .card-body .details,
-          #movies .animasyon-container .grid-container .card .card-body .details,
-          #movies .bilim-container .grid-container .card .card-body .details, #shows .movies-container .grid-container .card .card-body .details,
-          #shows .shows-container .grid-container .card .card-body .details,
-          #shows .macera-container .grid-container .card .card-body .details,
-          #shows .komedi-container .grid-container .card .card-body .details,
-          #shows .belgesel-container .grid-container .card .card-body .details,
-          #shows .dram-container .grid-container .card .card-body .details,
-          #shows .tarihi-container .grid-container .card .card-body .details,
-          #shows .korku-container .grid-container .card .card-body .details,
-          #shows .gizem-container .grid-container .card .card-body .details,
-          #shows .animasyon-container .grid-container .card .card-body .details,
-          #shows .bilim-container .grid-container .card .card-body .details {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 14px;
-            margin-top: 12px;
-            font-size: 15px;
-            font-weight: 500;
-            opacity: 0.7; }
-          #movies-shows .movies-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .shows-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .macera-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .komedi-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .belgesel-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .dram-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .tarihi-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .korku-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .gizem-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .animasyon-container .grid-container .card .card-body h3.avarage,
-          #movies-shows .bilim-container .grid-container .card .card-body h3.avarage, #movies .movies-container .grid-container .card .card-body h3.avarage,
-          #movies .shows-container .grid-container .card .card-body h3.avarage,
-          #movies .macera-container .grid-container .card .card-body h3.avarage,
-          #movies .komedi-container .grid-container .card .card-body h3.avarage,
-          #movies .belgesel-container .grid-container .card .card-body h3.avarage,
-          #movies .dram-container .grid-container .card .card-body h3.avarage,
-          #movies .tarihi-container .grid-container .card .card-body h3.avarage,
-          #movies .korku-container .grid-container .card .card-body h3.avarage,
-          #movies .gizem-container .grid-container .card .card-body h3.avarage,
-          #movies .animasyon-container .grid-container .card .card-body h3.avarage,
-          #movies .bilim-container .grid-container .card .card-body h3.avarage, #shows .movies-container .grid-container .card .card-body h3.avarage,
-          #shows .shows-container .grid-container .card .card-body h3.avarage,
-          #shows .macera-container .grid-container .card .card-body h3.avarage,
-          #shows .komedi-container .grid-container .card .card-body h3.avarage,
-          #shows .belgesel-container .grid-container .card .card-body h3.avarage,
-          #shows .dram-container .grid-container .card .card-body h3.avarage,
-          #shows .tarihi-container .grid-container .card .card-body h3.avarage,
-          #shows .korku-container .grid-container .card .card-body h3.avarage,
-          #shows .gizem-container .grid-container .card .card-body h3.avarage,
-          #shows .animasyon-container .grid-container .card .card-body h3.avarage,
-          #shows .bilim-container .grid-container .card .card-body h3.avarage {
-            margin-top: 8px;
-            opacity: 0.7;
-            font-size: 12px;
-            font-weight: 500;
-            overflow: hidden; }
-            #movies-shows .movies-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .shows-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .macera-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .komedi-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .belgesel-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .dram-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .tarihi-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .korku-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .gizem-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .animasyon-container .grid-container .card .card-body h3.avarage span,
-            #movies-shows .bilim-container .grid-container .card .card-body h3.avarage span, #movies .movies-container .grid-container .card .card-body h3.avarage span,
-            #movies .shows-container .grid-container .card .card-body h3.avarage span,
-            #movies .macera-container .grid-container .card .card-body h3.avarage span,
-            #movies .komedi-container .grid-container .card .card-body h3.avarage span,
-            #movies .belgesel-container .grid-container .card .card-body h3.avarage span,
-            #movies .dram-container .grid-container .card .card-body h3.avarage span,
-            #movies .tarihi-container .grid-container .card .card-body h3.avarage span,
-            #movies .korku-container .grid-container .card .card-body h3.avarage span,
-            #movies .gizem-container .grid-container .card .card-body h3.avarage span,
-            #movies .animasyon-container .grid-container .card .card-body h3.avarage span,
-            #movies .bilim-container .grid-container .card .card-body h3.avarage span, #shows .movies-container .grid-container .card .card-body h3.avarage span,
-            #shows .shows-container .grid-container .card .card-body h3.avarage span,
-            #shows .macera-container .grid-container .card .card-body h3.avarage span,
-            #shows .komedi-container .grid-container .card .card-body h3.avarage span,
-            #shows .belgesel-container .grid-container .card .card-body h3.avarage span,
-            #shows .dram-container .grid-container .card .card-body h3.avarage span,
-            #shows .tarihi-container .grid-container .card .card-body h3.avarage span,
-            #shows .korku-container .grid-container .card .card-body h3.avarage span,
-            #shows .gizem-container .grid-container .card .card-body h3.avarage span,
-            #shows .animasyon-container .grid-container .card .card-body h3.avarage span,
-            #shows .bilim-container .grid-container .card .card-body h3.avarage span {
-              font-size: 18px;
-              color: #4298ff; }
   #movies-shows .shows-container,
   #movies-shows .macera-container,
   #movies-shows .komedi-container,
@@ -948,7 +573,8 @@ section#slide {
   #movies-shows .korku-container,
   #movies-shows .gizem-container,
   #movies-shows .animasyon-container,
-  #movies-shows .bilim-container, #movies .shows-container,
+  #movies-shows .bilim-container,
+  #movies .shows-container,
   #movies .macera-container,
   #movies .komedi-container,
   #movies .belgesel-container,
@@ -957,7 +583,8 @@ section#slide {
   #movies .korku-container,
   #movies .gizem-container,
   #movies .animasyon-container,
-  #movies .bilim-container, #shows .shows-container,
+  #movies .bilim-container,
+  #shows .shows-container,
   #shows .macera-container,
   #shows .komedi-container,
   #shows .belgesel-container,
@@ -983,6 +610,230 @@ footer {
     footer .foo-container p {
       color: #7b909d; }
 
+.show-detail-container {
+  position: relative;
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-image: url("https://paramount-media.de/image/get/id/425/q/85/w/1920/h/1080/name/header_desktop.jpg");
+  background-position: center;
+  object-fit: cover; }
+  .show-detail-container .ilgili h3 {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px; }
+    .show-detail-container .ilgili h3::before {
+      position: absolute;
+      bottom: -6px;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #fff; }
+  .show-detail-container .grad {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #191e25, rgba(0, 5, 13, 0) 49.93%);
+    z-index: 500;
+    border-radius: 12px; }
+  .show-detail-container .detail-outer {
+    height: 100%;
+    width: 100%; }
+    .show-detail-container .detail-outer .detail-info {
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      left: 50px;
+      z-index: 1000;
+      max-width: 40%; }
+      .show-detail-container .detail-outer .detail-info h1 {
+        font-size: 50px;
+        margin-bottom: 36px; }
+      .show-detail-container .detail-outer .detail-info p.overview {
+        font-size: 20px;
+        margin-bottom: 20px; }
+      .show-detail-container .detail-outer .detail-info p.relase-date {
+        margin-bottom: 10px;
+        font-size: 20px;
+        float: left;
+        margin-right: 30px; }
+      .show-detail-container .detail-outer .detail-info h3 {
+        font-size: 20px;
+        width: fit-content; }
+        .show-detail-container .detail-outer .detail-info h3 span {
+          font-size: 30px;
+          color: #4298ff; }
+      .show-detail-container .detail-outer .detail-info ul {
+        display: flex;
+        gap: 10px; }
+        .show-detail-container .detail-outer .detail-info ul li {
+          position: relative;
+          padding: 4px 8px;
+          background: #000;
+          border-radius: 4px;
+          background-color: rgba(255, 255, 255, 0.2);
+          overflow: hidden; }
+          .show-detail-container .detail-outer .detail-info ul li::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            background: #fff; }
+      .show-detail-container .detail-outer .detail-info a.btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #fff;
+        width: fit-content;
+        padding: 12px 34px;
+        margin-top: 20px;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.2);
+        font-size: 18px;
+        font-weight: 600;
+        transition: all ease 0.34s;
+        cursor: pointer; }
+        .show-detail-container .detail-outer .detail-info a.btn:hover {
+          transform: scale(1.05);
+          background: #fff;
+          color: #01050d; }
+  .show-detail-container .grad-ttop {
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    background: linear-gradient(0deg, #191e25, rgba(0, 5, 13, 0) 33.42%); }
+
+.advice {
+  max-width: 94%;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  overflow: hidden; }
+  .advice .title {
+    margin-bottom: 20px; }
+  .advice .swiper2 {
+    position: relative; }
+    .advice .swiper2 .swiper-wrapper {
+      gap: 20px; }
+      .advice .swiper2 .swiper-wrapper .swiper-slide {
+        width: 300px !important;
+        transition: all ease 0.34s;
+        margin-right: 0 !important; }
+        .advice .swiper2 .swiper-wrapper .swiper-slide:hover {
+          z-index: 1000; }
+        .advice .swiper2 .swiper-wrapper .swiper-slide img {
+          border-radius: 12px;
+          width: 100%; }
+    .advice .swiper2 .swiper-button-prev,
+    .advice .swiper2 .swiper-button-next {
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all ease 0.34s; }
+      .advice .swiper2 .swiper-button-prev::after,
+      .advice .swiper2 .swiper-button-next::after {
+        font-size: 24px;
+        font-weight: 500; }
+      .advice .swiper2 .swiper-button-prev:hover,
+      .advice .swiper2 .swiper-button-next:hover {
+        transform: scale(1.4); }
+    .advice .swiper2:hover .swiper-button-prev,
+    .advice .swiper2:hover .swiper-button-next {
+      display: flex; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 560px;
+  transition: all ease 0.34s;
+  cursor: pointer; }
+  .card.slide-card {
+    max-width: fit-content; }
+    .card.slide-card:hover {
+      transform: scale(1.08); }
+      .card.slide-card:hover a.card-link.slide-link .card-head img {
+        border-radius: 0px;
+        border-radius: 0px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px; }
+    .card.slide-card .card-body {
+      top: calc(100% - 4px); }
+  .card:hover {
+    transform: scale(1.1); }
+    .card:hover a.card-link .card-head img {
+      border-radius: 0px;
+      border-radius: 0px;
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px; }
+    .card:hover .card-body {
+      display: block; }
+  .card a.card-link {
+    width: 100%; }
+    .card a.card-link.slide-link {
+      width: 100%;
+      height: 100%; }
+      .card a.card-link.slide-link .card-head {
+        width: 300px;
+        height: 100%; }
+        .card a.card-link.slide-link .card-head img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 12px; }
+    .card a.card-link .card-head {
+      height: 400px;
+      width: 100%; }
+      .card a.card-link .card-head img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px; }
+  .card .card-body {
+    position: absolute;
+    display: none;
+    top: 400px;
+    width: 100%;
+    background: #000;
+    padding: 16px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: all ease 0.34s; }
+    .card .card-body h3 {
+      font-size: 20px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+    .card .card-body .details {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.7; }
+    .card .card-body h3.avarage {
+      margin-top: 8px;
+      opacity: 0.7;
+      font-size: 12px;
+      font-weight: 500;
+      overflow: hidden; }
+      .card .card-body h3.avarage span {
+        font-size: 18px;
+        color: #4298ff; }
+
 @media screen and (max-width: 1500px) {
   .logo a {
     font-size: 18px; }
@@ -1004,7 +855,59 @@ footer {
       width: 28px;
       height: 28px; }
     header #header .search-icon {
-      font-size: 22px; } }
+      font-size: 22px; }
+  .show-detail-container .detail-outer .detail-info p.relase-date {
+    float: none; }
+  .show-detail-container .detail-outer .detail-info ul {
+    margin-bottom: 10px; } }
+
+@media screen and (max-width: 590px) {
+  #movies-shows .movies-container .grid-container,
+  #movies-shows .shows-container .grid-container,
+  #movies-shows .macera-container .grid-container,
+  #movies-shows .komedi-container .grid-container,
+  #movies-shows .belgesel-container .grid-container,
+  #movies-shows .dram-container .grid-container,
+  #movies-shows .tarihi-container .grid-container,
+  #movies-shows .korku-container .grid-container,
+  #movies-shows .gizem-container .grid-container,
+  #movies-shows .animasyon-container .grid-container,
+  #movies-shows .bilim-container .grid-container,
+  #movies .movies-container .grid-container,
+  #movies .shows-container .grid-container,
+  #movies .macera-container .grid-container,
+  #movies .komedi-container .grid-container,
+  #movies .belgesel-container .grid-container,
+  #movies .dram-container .grid-container,
+  #movies .tarihi-container .grid-container,
+  #movies .korku-container .grid-container,
+  #movies .gizem-container .grid-container,
+  #movies .animasyon-container .grid-container,
+  #movies .bilim-container .grid-container,
+  #shows .movies-container .grid-container,
+  #shows .shows-container .grid-container,
+  #shows .macera-container .grid-container,
+  #shows .komedi-container .grid-container,
+  #shows .belgesel-container .grid-container,
+  #shows .dram-container .grid-container,
+  #shows .tarihi-container .grid-container,
+  #shows .korku-container .grid-container,
+  #shows .gizem-container .grid-container,
+  #shows .animasyon-container .grid-container,
+  #shows .bilim-container .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 300px));
+    gap: 20px;
+    padding-top: 20px; }
+  .card {
+    max-width: none; }
+    .card a.card-link {
+      width: 100%;
+      height: 100%; }
+      .card a.card-link .card-head {
+        height: 100%; }
+    .card .card-body {
+      top: 560px; } }
 
 @media screen and (max-width: 860px) {
   header.sticky {
@@ -1154,7 +1057,8 @@ footer {
         transition: all ease 0.34s; }
       header #header #menu i.rotate {
         transform: rotate(180deg); }
-      header #header #menu span, header #header #menu i.i-bfr {
+      header #header #menu span,
+      header #header #menu i.i-bfr {
         display: inherit; } }
 
 @media screen and (max-width: 340px) {
