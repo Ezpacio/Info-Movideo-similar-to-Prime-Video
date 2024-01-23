@@ -4,7 +4,14 @@ const global = {
     api: {
         api_key: 'd087f4c33449d2dc1505b6a5b29961e1',
         api_url: 'https://api.themoviedb.org/3/'
-    }
+    },
+    search: {
+        term: '',
+        type: 'multi',
+        page: 1,
+        totalPages: 1,
+        totalResults: 0
+    },
 
 }
 
@@ -41,7 +48,6 @@ const displayMovieCategories = async (genre, type) => {
     });
 };
 
-
 // Display 20 populer tvshows and movies
 const displayPopurMoviesShows = async (link, type) => {
     // fetching api from fetchApiData
@@ -73,7 +79,6 @@ const displayPopurMoviesShows = async (link, type) => {
     });
 };
 
-
 // Display 6 trend movie to slide
 const displaytrandMoviesToSlide = async (link) => {
     const { results } = await fetchApiData(link);
@@ -100,7 +105,6 @@ const displaytrandMoviesToSlide = async (link) => {
 };
 
 // Detail pages
-
 const showsDetailPage = async (link) => {
     const showId = window.location.search.split('=')[1];
 
@@ -126,7 +130,7 @@ const showsDetailPage = async (link) => {
             <p class="relase-date">
                 ${shows.release_date ? shows.release_date : shows.first_air_date}
                 <ul>
-                ${shows.genres.map((genre)=> `<li class="genres">${genre.name}</li>`).join('')}
+                ${shows.genres.map((genre) => `<li class="genres">${genre.name}</li>`).join('')}
                 </ul>
             </p>
             <h3 class="avarage"><span>${shows.vote_average.toFixed(1)}</span> / 10</h3>
@@ -147,8 +151,8 @@ const showsDetailPage = async (link) => {
             <a class="card-link slide-link" href="${slideImg.title ? 'movieDetail' : 'showDetail'}.html?id=${slideImg.id}">
                 <div class="card-head">
                 ${slideImg.backdrop_path
-                    ? `<img src="https://image.tmdb.org/t/p/original/${slideImg.backdrop_path}" alt="${slideImg.title ? slideImg.title : slideImg.name}">`
-                    : `<img src="./images/card-no-images.png" alt="${slideImg.title ? slideImg.title : slideImg.name}">`}
+                ? `<img src="https://image.tmdb.org/t/p/original/${slideImg.backdrop_path}" alt="${slideImg.title ? slideImg.title : slideImg.name}">`
+                : `<img src="./images/card-no-images.png" alt="${slideImg.title ? slideImg.title : slideImg.name}">`}
                 </div>
             </a>
             <div class="card-body">
@@ -171,7 +175,6 @@ const showsDetailPage = async (link) => {
     document.querySelector('.show-detail-container').appendChild(detailInfo);
 };
 
-
 function displayBackgroundImage(backgroundPath) {
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('show-detail-container')
@@ -185,6 +188,119 @@ function displayBackgroundImage(backgroundPath) {
     document.getElementById('show-detail-outer').appendChild(overlayDiv);
 }
 
+// Search
+const search = async () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    global.search.type = 'multi';
+    global.search.term = urlParams.get('search-term');
+
+    if (global.search.term !== '' && global.search.term !== null) {
+        const { results, total_pages, page, total_results } = await searchAPIData();
+
+        global.search.page = page;
+        global.search.totalPages = total_pages;
+        global.search.totalResults = total_results;
+
+        if (results.length === 0) {
+            alert('No results found!');
+            return;
+        }
+        displaySearchResults(results);
+    }else {
+        alert('Please enter a search term!');
+    }
+};
+
+const displaySearchResults = (results) => {
+
+    document.querySelector('.grid-container').innerHTML = '';
+    document.getElementById('pagination').innerHTML = '';
+
+    results.forEach(result => {
+
+        const showResult = document.createElement('div');
+        showResult.classList.add('card');
+        showResult.innerHTML = `
+        <a class="card-link" href="${result.title ? 'movieDetail' : 'showDetail'}.html?id=${result.id}">
+        <div class="card-head">
+            ${result.poster_path
+                ? `<img src="https://tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}">`
+                : `<img src="./images/card-no-images.png" alt="${result.title}">`}
+        </div>
+        </a>
+        <div class="card-body">
+            <div class="card-info">
+                <h3 class="card-title">
+                ${result.title ? result.title : result.name}
+                </h3>
+                <div class="details">
+                    <span>${result.release_date ? result.release_date : result.first_air_date}</span>
+                </div>
+                <h3 class='avarage'><span>${result.vote_average !== undefined ? result.vote_average.toFixed(1) : 0}</span> / 10</h3>
+            </div>
+        </div>`;
+
+        document.querySelector('.title').innerHTML = `
+            <h3>"${global.search.term}" Sonuçları</h3>
+        `;
+
+        document.querySelector('.grid-container').appendChild(showResult);
+    });
+    displayPagination();
+};
+
+// Display pagination
+const displayPagination = () => {
+    document.querySelector('#pagination').innerHTML = `
+    <button class="btn-page prev">
+    <i class="iconoir-nav-arrow-left"></i>
+    </button>
+    <button class="btn-page next">
+        <i class="iconoir-nav-arrow-right"></i>
+    </button>`;
+
+    // select buttons
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    // Disable prev btn if on first page
+    if(global.search.page === 1){
+        prevBtn.disabled = true;
+    }
+
+    if(global.search.page === global.search.totalPages){
+        nextBtn.disabled = true;
+    }
+
+    // Next page
+    nextBtn.addEventListener('click', async () => {
+        global.search.page++;
+        const {results, total_pages} = await searchAPIData();
+        displaySearchResults(results);
+    })
+
+    // Prev page
+    prevBtn.addEventListener('click', async () => {
+        global.search.page--;
+        const {results, total_pages} = await searchAPIData();
+        displaySearchResults(results);
+    })
+}
+
+
+
+// search api deta
+const searchAPIData = async () => {
+    const api_key = global.api.api_key;
+    const api_url = global.api.api_url;
+
+    const response = await fetch(`${api_url}search/${global.search.type}?api_key=${api_key}&
+    language=en-US&query=${global.search.term}&page=${global.search.page}`);
+    const data = await response.json();
+
+    return data;
+};
 
 // fetch api for genre
 const fetchGenriApi = async (genre) => {
@@ -264,6 +380,9 @@ const init = () => {
             break;
         case '/dist/movieDetail.html':
             showsDetailPage('movie');
+            break;
+        case '/dist/search.html':
+            search();
             break;
     }
 }
