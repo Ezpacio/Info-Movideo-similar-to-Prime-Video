@@ -388,15 +388,15 @@ const init = () => {
             displayMovieCategories(878, 'bilim');
             break;
         case '/dist/showDetail.html':
-        case '/showDetail':
+        case '/showdetail':
             showsDetailPage('tv');
             break;
         case '/dist/movieDetail.html':
-        case '/movieDetail':
+        case '/moviedetail':
             showsDetailPage('movie');
             break;
         case '/dist/search.html':
-        case '/search':
+        case '/search.html':
             search();
             break;
     }
