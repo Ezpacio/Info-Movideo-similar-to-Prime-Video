@@ -327,6 +327,7 @@ const fetchApiData = async (endpoint) => {
 const init = () => {
     switch (global.currentPage) {
         case '/dist/index.html':
+        case 'info-movideo.netlify.app':
             displaytrandMoviesToSlide('trending/movie/day');
             displayPopurMoviesShows('movie/popular', 'movies');
             displayPopurMoviesShows('tv/popular', 'shows');
@@ -341,47 +342,61 @@ const init = () => {
             displayMovieCategories(878, 'bilim');
             break;
         case '/dist/movies.html':
+        case 'info-movideo.netlify.app/movies':
             displayPopurMoviesShows('movie/now_playing', 'movies');
             displaytrandMoviesToSlide('trending/movie/day');
             break;
         case '/dist/shows.html':
+        case 'info-movideo.netlify.app/shows':
             displayPopurMoviesShows('tv/popular', 'shows');
             displaytrandMoviesToSlide('trending/tv/day');
             break;
         case '/dist/action.html':
+        case 'info-movideo.netlify.app/action':
             displayMovieCategories(28, 'macera');
             break;
         case '/dist/comedy.html':
+        case 'info-movideo.netlify.app/comedy':
             displayMovieCategories(35, 'komedi');
             break;
         case '/dist/documentry.html':
+        case 'info-movideo.netlify.app/documentry':
             displayMovieCategories(99, 'belgesel');
             break;
         case '/dist/drama.html':
+        case 'info-movideo.netlify.app/drama':
             displayMovieCategories(18, 'dram');
             break;
         case '/dist/Historie.html':
+        case 'info-movideo.netlify.app/Historie':
             displayMovieCategories(36, 'tarihi');
             break;
         case '/dist/fear.html':
+        case 'info-movideo.netlify.app/fear':
             displayMovieCategories(27, 'korku');
             break;
         case '/dist/mystery.html':
+        case 'info-movideo.netlify.app/mystery':
             displayMovieCategories(9648, 'gizem');
             break;
         case '/dist/animation.html':
+        case 'info-movideo.netlify.app/animation':
             displayMovieCategories(16, 'animasyon');
             break;
         case '/dist/siencefiction.html':
+        case 'info-movideo.netlify.app/siencefiction':
             displayMovieCategories(878, 'bilim');
             break;
         case '/dist/showDetail.html':
+        case 'info-movideo.netlify.app/showDetail':
             showsDetailPage('tv');
             break;
         case '/dist/movieDetail.html':
+        case 'info-movideo.netlify.app/movieDetail':
             showsDetailPage('movie');
             break;
         case '/dist/search.html':
+        case 'info-movideo.netlify.app/search':
             search();
             break;
     }

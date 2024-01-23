@@ -52,11 +52,6 @@ document.querySelectorAll('.c-list').forEach(item => {
     })
 })
 
-
-
-
-
-
 /* Slide Options*/
 const swiper = new Swiper('.swiper', {
     speed: 900,
@@ -76,6 +71,7 @@ const swiper = new Swiper('.swiper', {
         delay: 5000,
     },
 });
+
 const swiper2 = new Swiper('.swiper2', {
     speed: 900,
     navigation: {
@@ -105,9 +101,6 @@ const swiper2 = new Swiper('.swiper2', {
       }
     }
 });
-
-
-
 
 function initAll() {
     resetBtn.addEventListener('click', () => {
