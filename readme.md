@@ -1,6 +1,6 @@
 ###  "info movideo" Prime Video-like project where detailed movie and TV series information is displayed using public API
 
-# Info Moviedo, Movie App
+# Info Movideo, Movie App
 
 
 1- Home Page 
