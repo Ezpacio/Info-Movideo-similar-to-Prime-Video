@@ -27,8 +27,8 @@ const displayMovieCategories = async (genre, type) => {
         <a class="card-link" href="${genre.title ? 'movieDetail' : 'showDetail'}.html?id=${genre.id}">
         <div class="card-head">
             ${genre.poster_path
-                ? `<img src="https://tmdb.org/t/p/w400${genre.poster_path}" alt="${genre.title}">`
-                : `<img src="./images/card-no-images.png" alt="${genre.title}">`}
+                ? `<img loading="lazy" src="https://tmdb.org/t/p/w400${genre.poster_path}" alt="${genre.title}">`
+                : `<img loading="lazy" src="./images/card-no-images.png" alt="${genre.title}">`}
         </div>
         </a>
         <div class="card-body">
@@ -59,8 +59,8 @@ const displayPopurMoviesShows = async (link, type) => {
         <a class="card-link" href="${show.title ? 'movieDetail' : 'showDetail'}.html?id=${show.id}">
         <div class="card-head">
             ${show.poster_path
-                ? `<img src="https://tmdb.org/t/p/w400${show.poster_path}" alt="${show.title}">`
-                : `<img src="./images/card-no-images.png" alt="${show.title}">`}
+                ? `<img loading="lazy" src="https://tmdb.org/t/p/w400${show.poster_path}" alt="${show.title}">`
+                : `<img loading="lazy" src="./images/card-no-images.png" alt="${show.title}">`}
         </div>
         </a>
         <div class="card-body">
@@ -90,8 +90,8 @@ const displaytrandMoviesToSlide = async (link) => {
         <div class="grad"></div>
         <a href="${results[i].title ? 'movieDetail' : 'showDetail'}.html?id=${results[i].id}">
         ${results[i].backdrop_path
-                ? `<img src="https://image.tmdb.org/t/p/original/${results[i].backdrop_path}" alt="${results[i].title}">`
-                : `<img src="./images/card-no-images.png" alt="${results[i].title}">`}
+                ? `<img loading="lazy" src="https://image.tmdb.org/t/p/original/${results[i].backdrop_path}" alt="${results[i].title}">`
+                : `<img loading="lazy" src="./images/card-no-images.png" alt="${results[i].title}">`}
         </a>
 
             <div class="slide-info">
@@ -151,8 +151,8 @@ const showsDetailPage = async (link) => {
             <a class="card-link slide-link" href="${slideImg.title ? 'movieDetail' : 'showDetail'}.html?id=${slideImg.id}">
                 <div class="card-head">
                 ${slideImg.backdrop_path
-                ? `<img src="https://image.tmdb.org/t/p/original/${slideImg.backdrop_path}" alt="${slideImg.title ? slideImg.title : slideImg.name}">`
-                : `<img src="./images/card-no-images.png" alt="${slideImg.title ? slideImg.title : slideImg.name}">`}
+                ? `<img loading="lazy" src="https://image.tmdb.org/t/p/original/${slideImg.backdrop_path}" alt="${slideImg.title ? slideImg.title : slideImg.name}">`
+                : `<img loading="lazy" src="./images/card-no-images.png" alt="${slideImg.title ? slideImg.title : slideImg.name}">`}
                 </div>
             </a>
             <div class="card-body">
@@ -226,8 +226,8 @@ const displaySearchResults = (results) => {
         <a class="card-link" href="${result.title ? 'movieDetail' : 'showDetail'}.html?id=${result.id}">
         <div class="card-head">
             ${result.poster_path
-                ? `<img src="https://tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}">`
-                : `<img src="./images/card-no-images.png" alt="${result.title}">`}
+                ? `<img loading="lazy" src="https://tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}">`
+                : `<img loading="lazy" src="./images/card-no-images.png" alt="${result.title}">`}
         </div>
         </a>
         <div class="card-body">
