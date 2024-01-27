@@ -368,7 +368,7 @@ const init = () => {
             displayMovieCategories(18, 'dram');
             break;
         case '/dist/Historie.html':
-        case '/Historie':
+        case '/historie':
             displayMovieCategories(36, 'tarihi');
             break;
         case '/dist/fear.html':
